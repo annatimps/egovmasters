@@ -514,8 +514,15 @@ function StudyHub() {
                 Summary / Key Points
               </h2>
               <div ref={summaryRef} className="prose-study" key={`s-${activeDoc.doc.id}-${activeQuery}`}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {activeDoc.doc.summary}
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    a: ({ node, ...props }) => (
+                      <a {...props} target="_blank" rel="noopener noreferrer" />
+                    ),
+                  }}
+                >
+                  {linkifySourceFiles(activeDoc.doc.summary)}
                 </ReactMarkdown>
               </div>
             </section>
