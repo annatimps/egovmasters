@@ -5,7 +5,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { studyContent } from "@/data/studyContent";
 import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp, NotebookPen, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PdfViewer } from "@/components/PdfViewer";
+import { lazy, Suspense } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+const PdfViewer = lazy(() =>
+  import("@/components/PdfViewer").then((m) => ({ default: m.PdfViewer })),
+);
 
 export const Route = createFileRoute("/")({
   component: StudyHub,
@@ -538,10 +542,14 @@ function StudyHub() {
 
             {activeDoc.doc.file ? (
               activeDoc.doc.file.toLowerCase().endsWith(".pdf") ? (
-                <PdfViewer
-                  url={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
-                  title={activeDoc.doc.title}
-                />
+                <ClientOnly fallback={<div className="text-sm text-muted-foreground p-6">Loading PDF viewer…</div>}>
+                  <Suspense fallback={<div className="text-sm text-muted-foreground p-6">Loading PDF viewer…</div>}>
+                    <PdfViewer
+                      url={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
+                      title={activeDoc.doc.title}
+                    />
+                  </Suspense>
+                </ClientOnly>
               ) : (
                 <div className="rounded-lg border border-border bg-card p-6 text-sm">
                   <p className="text-muted-foreground mb-3">
