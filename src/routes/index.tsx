@@ -20,6 +20,16 @@ function escapeRegExp(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+// Turn `Source file:** \`some name.pdf\`` into a clickable markdown link
+// pointing at the corresponding file in /public/materials/.
+function linkifySourceFiles(md: string): string {
+  return md.replace(
+    /(Source file:\*\*\s*)`([^`]+)`/g,
+    (_m, prefix, filename) =>
+      `${prefix}[${filename}](/materials/${encodeURIComponent(filename)})`,
+  );
+}
+
 type SearchHit = {
   topicId: string;
   topicTitle: string;
@@ -504,8 +514,15 @@ function StudyHub() {
                 Summary / Key Points
               </h2>
               <div ref={summaryRef} className="prose-study" key={`s-${activeDoc.doc.id}-${activeQuery}`}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {activeDoc.doc.summary}
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    a: ({ node, ...props }) => (
+                      <a {...props} target="_blank" rel="noopener noreferrer" />
+                    ),
+                  }}
+                >
+                  {linkifySourceFiles(activeDoc.doc.summary)}
                 </ReactMarkdown>
               </div>
             </section>
