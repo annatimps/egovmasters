@@ -5,6 +5,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { studyContent } from "@/data/studyContent";
 import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp, NotebookPen, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PdfViewer } from "@/components/PdfViewer";
 
 export const Route = createFileRoute("/")({
   component: StudyHub,
