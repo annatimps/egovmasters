@@ -5,6 +5,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { studyContent } from "@/data/studyContent";
 import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp, NotebookPen, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PdfViewer } from "@/components/PdfViewer";
 
 export const Route = createFileRoute("/")({
   component: StudyHub,
@@ -536,27 +537,27 @@ function StudyHub() {
             </div>
 
             {activeDoc.doc.file ? (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <p className="text-xs text-muted-foreground">
-                    Use the toolbar inside the viewer to search (Ctrl/Cmd+F), zoom, or download.
+              activeDoc.doc.file.toLowerCase().endsWith(".pdf") ? (
+                <PdfViewer
+                  url={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
+                  title={activeDoc.doc.title}
+                />
+              ) : (
+                <div className="rounded-lg border border-border bg-card p-6 text-sm">
+                  <p className="text-muted-foreground mb-3">
+                    This file ({activeDoc.doc.file.split(".").pop()?.toUpperCase()}) can't be
+                    rendered inline.
                   </p>
                   <a
                     href={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs px-2 py-1 rounded-md border border-border hover:bg-accent"
+                    className="inline-flex items-center px-3 py-1.5 rounded-md border border-border hover:bg-accent"
                   >
-                    Open in new tab ↗
+                    Download / Open ↗
                   </a>
                 </div>
-                <iframe
-                  key={activeDoc.doc.id}
-                  src={`/materials/${encodeURIComponent(activeDoc.doc.file)}#view=FitH`}
-                  title={activeDoc.doc.title}
-                  className="w-full h-[85vh] rounded-lg border border-border bg-card"
-                />
-              </div>
+              )
             ) : (
               <div ref={contentRef} className="prose-study" key={`c-${activeDoc.doc.id}-${activeQuery}`}>
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
