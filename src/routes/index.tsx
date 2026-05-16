@@ -440,6 +440,59 @@ function StudyHub() {
               </div>
             )}
 
+            {/* My notes */}
+            <section
+              aria-labelledby="notes-heading"
+              className="rounded-xl border border-border bg-card p-5 md:p-6 shadow-sm mb-5"
+            >
+              <div className="flex items-center justify-between mb-3 gap-3 flex-wrap">
+                <h2
+                  id="notes-heading"
+                  className="text-xs font-semibold uppercase tracking-wider text-primary flex items-center gap-1.5"
+                >
+                  <NotebookPen className="h-3.5 w-3.5" />
+                  My Notes
+                </h2>
+                <div className="flex items-center gap-2">
+                  {justSaved && (
+                    <span className="text-xs text-emerald-400 inline-flex items-center gap-1">
+                      <Check className="h-3.5 w-3.5" /> Saved
+                    </span>
+                  )}
+                  {notesDirty && !justSaved && (
+                    <span className="text-xs text-muted-foreground">Unsaved changes</span>
+                  )}
+                  <button
+                    onClick={() => setNotesDraft(notes)}
+                    disabled={!notesDirty}
+                    className="text-xs px-2 py-1 rounded-md border border-border hover:bg-accent disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    Reset
+                  </button>
+                  <button
+                    onClick={saveNotes}
+                    disabled={!notesDirty}
+                    className="text-xs px-3 py-1 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+              <textarea
+                value={notesDraft}
+                onChange={(e) => setNotesDraft(e.target.value)}
+                onKeyDown={(e) => {
+                  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
+                    e.preventDefault();
+                    saveNotes();
+                  }
+                }}
+                placeholder="Write or paste your own key points here. Saved locally to this browser. (⌘/Ctrl+S to save)"
+                className="w-full min-h-[120px] resize-y rounded-md border border-border bg-background p-3 text-sm leading-relaxed font-mono focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
+              />
+            </section>
+
+            {/* Lecture summary */}
             <section
               aria-labelledby="summary-heading"
               className="rounded-xl border border-border bg-accent/60 p-5 md:p-6 shadow-sm"
