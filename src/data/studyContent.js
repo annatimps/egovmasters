@@ -4885,6 +4885,7 @@ Thank you very much!
       },
       {
         id: "regulatory-legal-national-legislation-and-e-gov-18-09-2025",
+        file: "National legislation and e-gov_18.09.2025.pdf",
         title: "National legislation and e-gov_18.09.2025",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -5405,6 +5406,7 @@ Programme Regulation,       Facility Regulation,             Directive,         
       },
       {
         id: "regulatory-legal-regulation-tomorrow-what-happens-when-technology-is-faster-than-the-law-2",
+        file: "Regulation Tomorrow_What Happens When Technology is Faster than the Law (2).pdf",
         title: "Regulation Tomorrow_What Happens When Technology is Faster than the Law",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -7333,6 +7335,7 @@ TALTECH.EE/EN
       },
       {
         id: "interoperability-ngise25-mihkel-lauk-11032025",
+        file: "NGISE25_Mihkel-Lauk_11032025.pdf",
         title: "NGISE25_Mihkel-Lauk_11032025",
         summary: `**Topic context:** Interoperability: EIF four layers (legal / organisational / semantic / technical) and X-Road as Estonia's data-exchange layer.
 
@@ -8185,6 +8188,7 @@ REFERENCES                                                                      
     documents: [
       {
         id: "digital-identity-reshaping-the-eu-digital-identity-framework-lips2022-1",
+        file: "Reshaping the EU digital identity framework_Lips2022 (1).pdf",
         title: "Reshaping the EU digital identity framework_Lips2022",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -12792,6 +12796,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-lecture-3-change-management",
+        file: "Lecture 3 (Change Management).pdf",
         title: "Lecture 3 (Change Management)",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13446,6 +13451,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-performance-user-centric-service-design",
+        file: "Performance-User-Centric-Service-Design.pdf",
         title: "Performance-User-Centric-Service-Design",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -18619,6 +18625,7 @@ the e-government literacy subindex provides insights into government            
       },
       {
         id: "global-trends-oecd-regulatory-sandbox-toolkit",
+        file: "OECD Regulatory Sandbox Toolkit.pdf",
         title: "OECD Regulatory Sandbox Toolkit",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -22629,6 +22636,7 @@ KINGDOM OF SWEDEN
       },
       {
         id: "global-trends-tallinn-declaration-on-egovernment-1",
+        file: "Tallinn Declaration on eGovernment (1).pdf",
         title: "Tallinn Declaration on eGovernment",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
