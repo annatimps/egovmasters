@@ -126,6 +126,38 @@ function StudyHub() {
     return doc && topic ? { topic, doc } : null;
   }, [selected]);
 
+  // Load notes from localStorage whenever the active doc changes
+  useEffect(() => {
+    if (!activeDoc) {
+      setNotes("");
+      setNotesDraft("");
+      return;
+    }
+    try {
+      const stored = localStorage.getItem(`notes:${activeDoc.doc.id}`) ?? "";
+      setNotes(stored);
+      setNotesDraft(stored);
+    } catch {
+      setNotes("");
+      setNotesDraft("");
+    }
+    setJustSaved(false);
+  }, [activeDoc]);
+
+  const saveNotes = useCallback(() => {
+    if (!activeDoc) return;
+    try {
+      localStorage.setItem(`notes:${activeDoc.doc.id}`, notesDraft);
+      setNotes(notesDraft);
+      setJustSaved(true);
+      setTimeout(() => setJustSaved(false), 1500);
+    } catch (e) {
+      console.error("Failed to save notes", e);
+    }
+  }, [activeDoc, notesDraft]);
+
+  const notesDirty = notesDraft !== notes;
+
   const results = useMemo(() => computeResults(query), [query]);
 
   const toggle = (id: string) => setExpanded((e) => ({ ...e, [id]: !e[id] }));
