@@ -210,3 +210,19 @@
 .prose-study th { font-weight: 600; }
 .prose-study img { max-width: 100%; border-radius: var(--radius-md); }
 
+/* Search highlights */
+.search-hit {
+  background: #fde68a;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.search-hit-current {
+  background: #f59e0b;
+  color: #1a1a1a;
+  outline: 2px solid #b45309;
+  outline-offset: 1px;
+}
+
