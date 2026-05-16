@@ -10,6 +10,7 @@ export const studyContent = [
     documents: [
       {
         id: "foundations-04-09-2025-introductory-lecture",
+        file: "04.09.2025_Introductory Lecture.pdf",
         title: "04.09.2025_Introductory Lecture",
         summary: `**Topic context:** Foundations: e-government → e-governance, digital maturity (Interaction → Transaction → Transformation), digital literacy, prosumer citizen.
 
@@ -1030,6 +1031,7 @@ TALTECH.EE/EN
       },
       {
         id: "foundations-un-e-government-survey-2024-1",
+        file: "UN e-Government Survey 2024 (1).pdf",
         title: "UN e-Government Survey 2024",
         summary: `**Topic context:** Foundations: e-government → e-governance, digital maturity (Interaction → Transaction → Transformation), digital literacy, prosumer citizen.
 
@@ -3860,7 +3862,19 @@ the e-government literacy subindex provides insights into government            
     title: "Regulatory & Legal Frameworks",
     documents: [
       {
+        id: "regulatory-legal-europe-fit-for-the-digital-age",
+        title: "A Europe Fit for the Digital Age",
+        file: "_a-europe-fit-for-the-digital-ageeida-europe-fit-for-the-digital-age_a-europe-fit-for-the-digital-age7501 (3).pdf",
+        summary: `**Topic context:** EU strategy package "A Europe fit for the Digital Age" — empowering people with a new generation of technologies and shaping the EU's digital transformation.
+
+**Source file:** \`_a-europe-fit-for-the-digital-ageeida-europe-fit-for-the-digital-age_a-europe-fit-for-the-digital-age7501 (3).pdf\`
+
+Open the PDF below to read the full document.`,
+        content: ``,
+      },
+      {
         id: "regulatory-legal-05-09-2025-eu-regulatory-framework-for-egov",
+        file: "05.09.2025_EU Regulatory Framework for eGOV.pdf",
         title: "05.09.2025_EU Regulatory Framework for eGOV",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -4347,6 +4361,7 @@ THANK YOU VERY MUCH!
       },
       {
         id: "regulatory-legal-19-09-pre-juridical-framework-soft-law",
+        file: "19.09 Pre_juridical framework_soft law.pdf",
         title: "19.09 Pre_juridical framework_soft law",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -7769,6 +7784,7 @@ Business Architect    process architecture.                                   fo
       },
       {
         id: "interoperability-x-roadinteroperabilityhistoricalanalysis",
+        file: "x-roadinteroperabilityhistoricalanalysis.pdf",
         title: "x-roadinteroperabilityhistoricalanalysis",
         summary: `**Topic context:** Interoperability: EIF four layers (legal / organisational / semantic / technical) and X-Road as Estonia's data-exchange layer.
 
@@ -8694,6 +8710,7 @@ Re-Shaping the EU Digital Identity Framework                                    
       },
       {
         id: "digital-identity-what-is-a-digital-identity-wallet-a-systematic-literature-review-1",
+        file: "What_is_a_Digital_Identity_Wallet_A_Systematic_Literature_Review (1).pdf",
         title: "What_is_a_Digital_Identity_Wallet_A_Systematic_Literature_Review",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -9413,6 +9430,7 @@ Authorized licensed use limited to: Tallinn University of Technology. Downloaded
       },
       {
         id: "digital-identity-wef-reimagining-digital-id-2023-1",
+        file: "WEF_Reimagining_Digital_ID_2023 (1).pdf",
         title: "WEF_Reimagining_Digital_ID_2023",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -15729,6 +15747,7 @@ Thank you!`,
     documents: [
       {
         id: "global-trends-un-e-government-survey-2024-1",
+        file: "UN e-Government Survey 2024 (1).pdf",
         title: "UN e-Government Survey 2024",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -23246,6 +23265,7 @@ step.</th>
       },
       {
         id: "exam-skills-20-e-services-in-estonian-public-sector",
+        file: "20 E-services in Estonian Public Sector.pdf",
         title: "20 E-services in Estonian Public Sector",
         summary: `**Topic context:** Exam skills: Define → Apply → Evaluate → Recommend, one-page answer structure, public value / accountability / trade-offs.
 
