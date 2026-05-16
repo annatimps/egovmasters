@@ -22960,6 +22960,291 @@ Redress and complaint mechanisms
     title: "Exam Skills & Case Analysis",
     documents: [
       {
+        id: "exam-skills-masters-exam-study-guide-expanded",
+        title: "Masters Exam Study Guide (Expanded)",
+        summary: `**Topic context:** Exam skills: Define → Apply → Evaluate → Recommend, one-page answer structure, public value / accountability / trade-offs.
+
+**Source file:** \`Masters_Exam_Study_Guide_Expanded.docx\`
+
+**Use this as:** the master revision map — main topics, frameworks, regulations, and the exam-skill matrix (Define / Apply / Evaluate / Recommend).`,
+        content: `# Masters Exam Study Guide (Expanded)
+
+> Full extracted guide. Use Cmd/Ctrl+K to search.
+
+**Master's Exam Study Guide**
+
+E-Governance Technologies & Services Master's Programme
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Purpose of this guide</strong><br />
+This study guide identifies the main topics, frameworks and regulations
+that may appear in the Master's exam. It is not exhaustive. Use it as a
+structured map for revising lecture slides, readings, case discussions
+and your own notes.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+**How to study with this guide**
+
+- Focus first on understanding concepts, not memorising long lists.
+
+- For each topic, practise explaining why it matters for public sector
+  digital transformation.
+
+- Prepare to apply frameworks to short case scenarios, especially where
+  governance, legal, organisational and technical issues interact.
+
+- Use the right level of detail: define the concept, identify the main
+  risks or trade-offs, and propose a realistic action.
+
+| **Exam skill** | **What it means in practice** |
+|----|----|
+| **Define** | Give a clear meaning of a concept such as interoperability, shared services, portfolio management, or KPI. |
+| **Apply** | Use a framework such as EIF, service lifecycle, risk management or capability sourcing to analyse a case. |
+| **Evaluate** | Recognise trade-offs: efficiency vs. autonomy, innovation vs. accountability, centralisation vs. flexibility. |
+| **Recommend** | Propose a practical next step that is legally sound, organisationally feasible and user-centred. |
+
+# 1. Shared Service Centres & Digital Transformation
+
+Shared Service Centres (SSCs) are not only cost-saving tools; they are
+governance mechanisms for standardising common capabilities across the
+public sector.
+
+| **Sub-topic** | **Key points / frameworks** | **How to apply in an exam answer** |
+|----|----|----|
+| **Definition and purpose** | Centralised provision of common support services such as ICT infrastructure, workplace services, finance, HR, procurement, or cybersecurity. | Explain which services are suitable for centralisation and which should remain close to the policy domain. |
+| **Political and strategic drivers** | Cost efficiency, workforce optimisation, standardisation, quality improvement, resilience and alignment with national digital strategy. | Link the SSC to broader digital transformation objectives, not only to budget cuts. |
+| **Core SSC principles** | Common service catalogue; standard processes; SLAs and KPIs; client-oriented service culture; transparent costs. | Show how service expectations are defined and monitored. |
+| **Governance alignment** | Steering committee, service owner, escalation routes, change-control process and portfolio-level prioritisation. | Identify who decides, who funds, who owns the service, and who measures performance. |
+| **Main risks** | Loss of agency autonomy, one-size-fits-all services, weak demand management, unclear accountability, vendor dependency. | Balance efficiency with flexibility and domain-specific needs. |
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Remember</strong><br />
+Digital transformation means redesigning services, processes, data
+flows, roles and capabilities. It is not simply adding a digital channel
+to an existing administrative procedure.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+# 2. Public Service and e-Service Portfolio Management
+
+Portfolio management helps public organisations decide what to develop,
+maintain, improve, merge or retire.
+
+| **Portfolio layer** | **Key activities / tools** | **Useful exam angle** |
+|----|----|----|
+| **Public service portfolio** | Map statutory and discretionary services; identify legal mandate, target groups, outputs and outcomes. | Prioritise by public value, legal obligation, risk, demand and life-event relevance. |
+| **e-Service portfolio** | Manage digital services across the lifecycle: concept, planning, development, operation, evaluation and retirement. | Assess whether the digital service supports the whole service, not just the front-office interface. |
+| **Development needs portfolio** | Collect, compare and prioritise change requests across agencies and services. | Avoid duplicated developments and align limited resources with strategic objectives. |
+| **Business architecture link** | Connect services, processes, data, applications, roles and capabilities. | Use architecture to show dependencies and hidden impacts of change. |
+| **Budget link** | Connect development and maintenance costs to expected benefits and performance indicators. | Mention total cost of ownership, not only procurement or project cost. |
+
+| **Lifecycle phase** | **What students should remember** |
+|----|----|
+| **Initiating & planning** | Stakeholder analysis, as-is/to-be situation, legal basis, business architecture, KPIs and risk plan. |
+| **Budgeting & financing** | Cost-benefit logic, activity-based costing, total cost of ownership and funding constraints. |
+| **Implementing** | Change management, project execution, agile delivery, policy enforcement and benefit tracking. |
+| **Operations & maintenance** | Service handover, maintenance plan, support model, vendor management and long-term costs. |
+| **Controlling & evaluation** | Continuous monitoring, performance audit, user feedback and input to the next planning cycle. |
+
+# 3. KPI Formulation & Measurement
+
+Good KPIs connect service performance to public value, user experience,
+operational reliability and legal or strategic mandates.
+
+| **Dimension** | **Example indicators** | **Interpretation tip** |
+|----|----|----|
+| **Business / value** | User satisfaction index; lead time; take-up rate; cost-to-serve; number of unnecessary contacts avoided. | Show whether the service creates value for users and the public authority. |
+| **Outcome** | Reduction in administrative burden; faster access to benefits; fewer errors; improved compliance. | Outcome indicators should capture change in society, users or institutional performance. |
+| **Output** | Number of processed applications; number of digital transactions; completed integrations. | Output indicators show delivery, but not necessarily impact. |
+| **IT operational** | System availability; mean time to recover; incident volume; release frequency; backlog age. | Operational indicators help evaluate reliability and agility. |
+| **Mandate and policy alignment** | Digital take-up; cost savings; workforce optimisation; accessibility compliance; once-only reuse. | Check whether the indicator reflects the policy objective, not only internal activity. |
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>A simple KPI test</strong><br />
+A strong KPI should be specific, measurable, linked to a decision, and
+understandable to both business and IT stakeholders. Avoid indicators
+that measure activity without showing value.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+# 4. Risk Management in a Government Operational Model
+
+Risk management should be integrated into planning, budgeting,
+implementation and evaluation, not added at the end of a project.
+
+| **Risk category** | **Typical risks** | **Possible mitigation** |
+|----|----|----|
+| **Strategic** | Misaligned objectives; weak political mandate; unstable funding; regulatory change. | Link the service to strategy and legal mandate; secure decision-maker ownership. |
+| **Operational** | Process bottlenecks; unclear responsibilities; talent gaps; resistance to change. | Clarify roles, simplify processes, train staff and communicate the change. |
+| **Technical** | Legacy integration; poor scalability; vendor lock-in; cybersecurity threats. | Use architecture review, open standards, modular design and security-by-design. |
+| **Data / ethics** | Privacy breaches; poor data quality; bias in analytics; excessive data use. | Apply data minimisation, DPIA, data governance roles and human oversight where needed. |
+| **Service continuity** | Critical service downtime; inadequate support; forgotten maintenance costs. | Plan incident response, business continuity, SLAs and total cost of ownership. |
+
+# 5. Capability Management & Sourcing Decisions
+
+Capability management asks which skills, tools and responsibilities the
+public sector must retain, and which may be sourced externally.
+
+| **Capability example** | **Keep in-house when...** | **Outsource or partner when...** | **Watch out for** |
+|----|----|----|----|
+| **Enterprise architecture** | It shapes public value, interoperability, legal compliance and long-term dependency choices. | External expertise may support assessments or maturity building. | Do not outsource strategic ownership of architecture. |
+| **DevSecOps pipeline** | Security, release control and institutional learning are central to the organisation. | Specialist vendors may provide tools, automation or temporary capacity. | Avoid dependency on one supplier or opaque delivery practices. |
+| **Cybersecurity SOC** | Critical services require rapid response, trusted access and institutional accountability. | A national or shared SOC may provide economies of scale and advanced expertise. | Define responsibility for incidents, escalation and evidence handling. |
+| **AI analytics services** | The model affects administrative decisions, rights, transparency or policy choices. | External partners may support modelling, testing or infrastructure. | Ensure data protection, explainability, bias testing and human accountability. |
+| **Cloud and infrastructure** | Sovereignty, resilience or classified data require strong public control. | Commodity infrastructure may benefit from shared or cloud-based services. | Assess data location, exit strategy, continuity and security obligations. |
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Decision logic</strong><br />
+The more a capability affects legality, accountability, public trust or
+strategic knowledge, the stronger the case for retaining ownership and
+competence inside the public sector, even if delivery is supported by
+partners.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+# 6. Roles, Responsibilities & Governance
+
+Successful digital government requires clear ownership across business,
+IT, data, security and legal functions.
+
+| **Role** | **Core accountabilities** | **Reports / relates to** | **Key competencies** |
+|----|----|----|----|
+| **SSC Director** | Strategy, budget ownership, service catalogue, client relationship and performance. | Steering committee / ministry leadership. | Service portfolio management, stakeholder communication, financial governance. |
+| **Business Architect** | Connect services, processes, capabilities, data and organisational change. | Senior management / portfolio governance. | Business architecture, process analysis, policy understanding. |
+| **Service Owner** | Own service value, target group, quality, KPIs, development needs and user feedback. | Agency or domain leadership. | Service design, stakeholder management, value definition. |
+| **Product Owner** | Prioritise backlog, translate service needs into development tasks, accept increments. | Service owner / product manager. | Agile delivery, requirements, user needs, prioritisation. |
+| **Data Protection Officer** | Advise on GDPR compliance, DPIA, lawful processing and data subject rights. | Independently to management. | Privacy law, risk assessment, audit and consultation. |
+| **Cybersecurity Manager / CISO** | Security controls, incident response, SOC coordination and security standards. | Director / senior executive. | Threat intelligence, ISO 27001, E-ITS, NIS2 awareness. |
+| **Data Architect / Data Steward** | Data model, quality, metadata, reuse conditions and data ownership. | Business architect / data governance board. | Data governance, semantics, registries, interoperability. |
+
+| **Governance question** | **Why it matters** |
+|----|----|
+| **Who owns the service?** | Prevents unclear accountability between policy, agency and IT provider. |
+| **Who prioritises development needs?** | Avoids duplicated investments and unmanaged backlog growth. |
+| **Who controls data access?** | Supports legality, confidentiality, integrity and accountability. |
+| **Who measures benefits?** | Ensures that digitalisation is assessed against outcomes, not only delivery. |
+
+# 7. Information Society & Interoperability Principles
+
+Interoperability is a core condition for data-driven, user-centred and
+cross-border public services.
+
+| **Framework / principle** | **Essentials** | **Application tips** |
+|----|----|----|
+| **EIF layers** | Legal, organisational, semantic and technical interoperability. | Identify the barrier at the correct layer before proposing a solution. |
+| **Legal interoperability** | Different legal frameworks, mandates or access rules must be compatible. | Check legal basis, data-sharing agreements, liability and proportionality. |
+| **Organisational interoperability** | Processes, roles, responsibilities and expectations must be aligned. | Use process mapping, SLAs, memoranda of understanding and shared governance. |
+| **Semantic interoperability** | The meaning and structure of data must be preserved across systems. | Use shared vocabularies, metadata, data models and common definitions. |
+| **Technical interoperability** | Systems must exchange and use data through agreed standards and interfaces. | Discuss APIs, secure data exchange, authentication, logging and standards. |
+| **X-Road governance** | Distributed data exchange using security servers, access rights, logs and organisational responsibility of data owners. | Explain how trust is created without centralising all data into one database. |
+| **Once-only principle** | Citizens and businesses should not repeatedly provide data already held by public administrations. | Requires eID, registries, interoperability, lawful reuse and transparency for users. |
+| **Knowledge services** | Data-driven insights support citizens, officials and policymakers. | Combine registries responsibly; define purpose, quality, access and public value. |
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Common exam mistake</strong><br />
+Do not reduce interoperability to technology. In public administration,
+the organisational and legal layers are often the decisive
+barriers.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+# 8. Legal Foundations & Soft-Law Instruments
+
+Legal knowledge in the exam should be practical: identify the relevant
+framework, explain why it matters, and connect it to governance choices.
+
+| **Level** | **Key acts / standards** | **Relevance to exam topics** |
+|----|----|----|
+| **EU** | GDPR; NIS2; Data Act; Data Governance Act; eIDAS 2.0; Interoperable Europe Act; AI Act; Digital Services Act; Single Digital Gateway Regulation. | Data protection, cybersecurity, data sharing, digital identity, trustworthy AI, platform governance and cross-border public services. |
+| **National (Estonia)** | Public Information Act; Cybersecurity Act; Digital Signatures Act and relevant sectoral legislation. | Transparency, access to information, critical service security, trust services and national implementation. |
+| **Soft law / strategy** | Tallinn Declaration; Berlin Declaration; Estonian Digital Agenda 2030; E-ITS; guidelines, standards and recommendations. | Non-binding instruments shape expectations, targets, best practice and implementation culture. |
+| **Regulatory experimentation** | Regulatory sandboxes, pilots and controlled testing environments. | Useful where technology develops faster than legislation and regulators need evidence before setting rules. |
+
+| **Instrument** | **Student-friendly meaning** |
+|----|----|
+| **Regulation** | Directly applicable EU legal act; creates binding obligations. |
+| **Directive** | Binding as to result, but Member States decide how to transpose it nationally. |
+| **Standard** | Technical or organisational specification supporting consistency, safety, quality or interoperability. |
+| **Declaration / strategy** | Usually not legally binding, but important for policy direction and exam reasoning. |
+| **Guideline / recommendation** | Explains expected practice and supports consistent implementation. |
+
+# 9. Final Revision Checklist
+
+Use this page to test whether you can apply the guide to a case, rather
+than only recalling definitions.
+
+| **Question to ask yourself** | **Why it matters** |
+|----|----|
+| **What public value is the service expected to create?** | Keeps the answer focused on citizens, businesses and societal outcomes. |
+| **Which organisation owns the service and which owns the technology?** | Clarifies governance and accountability. |
+| **Which EIF layer is the main obstacle?** | Prevents purely technical answers to organisational or legal problems. |
+| **What data is needed, who owns it, and what is the lawful basis?** | Links data governance, GDPR and once-only implementation. |
+| **Which KPIs prove success?** | Connects outputs, outcomes and operational performance. |
+| **What are the main risks and mitigations?** | Shows realistic public sector implementation thinking. |
+| **Should the capability be kept in-house, shared or outsourced?** | Addresses capability management and vendor dependency. |
+| **Which legal or soft-law instruments guide the decision?** | Demonstrates regulatory awareness and policy alignment. |
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>One-page answer structure for case questions</strong><br />
+1) Define the issue. 2) Select the relevant framework. 3) Apply it to
+the case. 4) Identify trade-offs and risks. 5) Recommend a feasible next
+step.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+*End of study guide*
+`,
+      },
+      {
         id: "exam-skills-20-e-services-in-estonian-public-sector",
         title: "20 E-services in Estonian Public Sector",
         summary: `**Topic context:** Exam skills: Define → Apply → Evaluate → Recommend, one-page answer structure, public value / accountability / trade-offs.
