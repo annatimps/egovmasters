@@ -324,6 +324,7 @@ SEE YOU TOMORROW!`,
       },
       {
         id: "foundations-lecture-1-information-society-principles",
+        file: "Lecture 1- Information Society Principles.pdf",
         title: "Lecture 1- Information Society Principles",
         summary: `**Topic context:** Foundations: e-government → e-governance, digital maturity (Interaction → Transaction → Transformation), digital literacy, prosumer citizen.
 
@@ -3862,6 +3863,39 @@ the e-government literacy subindex provides insights into government            
     title: "Regulatory & Legal Frameworks",
     documents: [
       {
+        id: "regulatory-legal-eu-rule-of-law-report-2025",
+        title: "EU Rule of Law Report 2025",
+        file: "EU Rule of Law Report 2025.pdf",
+        summary: `**Topic context:** European Commission's annual Rule of Law Report — covers justice systems, anti-corruption frameworks, media pluralism and institutional checks and balances across EU Member States.
+
+**Source file:** \`EU Rule of Law Report 2025.pdf\`
+
+Open the PDF below to read the full report.`,
+        content: ``,
+      },
+      {
+        id: "regulatory-legal-eu-rule-of-law-report-2025-recommendations",
+        title: "EU Rule of Law Report 2025 — Recommendations",
+        file: "EU Rule of Law Report 2025_recommendations.pdf",
+        summary: `**Topic context:** Country-specific recommendations accompanying the EU Rule of Law Report 2025.
+
+**Source file:** \`EU Rule of Law Report 2025_recommendations.pdf\`
+
+Open the PDF below to read the recommendations.`,
+        content: ``,
+      },
+      {
+        id: "regulatory-legal-law-technology-white-case",
+        title: "Law & Technology: Risks and Opportunities (White & Case)",
+        file: "Law  Technology_ Risks and Opportunities from the Tectonic Forces at Work _ White  Case LLP (3).pdf",
+        summary: `**Topic context:** White & Case analysis of the tectonic forces reshaping the interaction between law and technology — risks, opportunities, and regulatory implications.
+
+**Source file:** \`Law  Technology_ Risks and Opportunities from the Tectonic Forces at Work _ White  Case LLP (3).pdf\`
+
+Open the PDF below to read the article.`,
+        content: ``,
+      },
+      {
         id: "regulatory-legal-europe-fit-for-the-digital-age",
         title: "A Europe Fit for the Digital Age",
         file: "_a-europe-fit-for-the-digital-ageeida-europe-fit-for-the-digital-age_a-europe-fit-for-the-digital-age7501 (3).pdf",
@@ -6918,6 +6952,7 @@ of innovation and technology.`,
     documents: [
       {
         id: "interoperability-lecture-2-interoperability",
+        file: "Lecture 2 - Interoperability.pdf",
         title: "Lecture 2 - Interoperability",
         summary: `**Topic context:** Interoperability: EIF four layers (legal / organisational / semantic / technical) and X-Road as Estonia's data-exchange layer.
 
@@ -12005,6 +12040,7 @@ Author Proof
     documents: [
       {
         id: "service-design-lecture-1-05-09-2025",
+        file: "Lecture 1 - 05-09-2025.pdf",
         title: "Lecture 1 - 05-09-2025",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -12371,6 +12407,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-lecture-2-19-09-2025",
+        file: "Lecture 2 - 19-09-2025.pdf",
         title: "Lecture 2 - 19-09-2025",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13091,6 +13128,7 @@ Change                           Discussions                   Concepts         
       },
       {
         id: "service-design-lecture-3-03-10-2025",
+        file: "Lecture 3 - 03-10-2025.pdf",
         title: "Lecture 3 - 03-10-2025",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13497,6 +13535,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-leadership-change-management-strategy-alignment",
+        file: "Leadership_Change-Management_Strategy-Alignment.pdf",
         title: "Leadership_Change-Management_Strategy-Alignment",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -15304,6 +15343,7 @@ Zarsky, T. Z. (2017), ‘Incompatible: the GDPR in the age of big data,’ Seton
       },
       {
         id: "ai-data-governance-intro-to-trust-and-data-1",
+        file: "Intro to Trust and Data (1).pdf",
         title: "Intro to Trust and Data",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
