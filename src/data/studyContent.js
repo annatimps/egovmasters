@@ -5226,6 +5226,7 @@ THANK YOU VERY MUCH!
       },
       {
         id: "regulatory-legal-eu-legislation-in-digital-sector-5",
+        file: "EU Legislation in Digital Sector (5).pdf",
         title: "EU Legislation in Digital Sector",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -11307,6 +11308,7 @@ www.weforum.org`,
       },
       {
         id: "digital-identity-eidas-implementation-challenges-lips21-1",
+        file: "eIDAS implementation challenges_Lips21 (1).pdf",
         title: "eIDAS implementation challenges_Lips21",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -13636,6 +13638,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-budgeting",
+        file: "Budgeting.pdf",
         title: "Budgeting",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13782,6 +13785,7 @@ mihkel.lauk@taltech.ee
     documents: [
       {
         id: "ai-data-governance-data-governance-and-public-sector-ai",
+        file: "Data Governance and Public Sector AI.pdf",
         title: "Data Governance and Public Sector AI",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
@@ -14236,6 +14240,7 @@ TALTECH.EE/EN`,
       },
       {
         id: "ai-data-governance-ai-and-the-gdpr-inevitable-nemeses-1",
+        file: "AI and the GDPR_inevitable nemeses (1).pdf",
         title: "AI and the GDPR_inevitable nemeses",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
@@ -15595,6 +15600,7 @@ LinkedIn
       },
       {
         id: "ai-data-governance-ai-and-human-rights-2025-2",
+        file: "AI and Human Rights 2025 (2).pptx",
         title: "AI and Human Rights 2025",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
@@ -20754,6 +20760,7 @@ REGULATORY SANDBOX TOOLKIT © OECD 2025
       },
       {
         id: "global-trends-eu-international-digital-strategy-1",
+        file: "EU International Digital Strategy (1).pdf",
         title: "EU International Digital Strategy",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -21527,6 +21534,7 @@ will continue to engage constructively based on respect for the international ru
       },
       {
         id: "global-trends-annex-to-the-eu-international-digital-strategy-1",
+        file: "Annex to the EU International Digital Strategy (1).pdf",
         title: "Annex to the EU International Digital Strategy",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -21923,6 +21931,7 @@ Stack                        Stack, referring to the foundational structure of p
       },
       {
         id: "global-trends-berlin-declaration-1",
+        file: "Berlin Declaration (1).pdf",
         title: "Berlin Declaration",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -23714,6 +23723,7 @@ Detailed analysis and concept development of 20 e-services in Estonian public se
       },
       {
         id: "exam-skills-ahfe2024-978-1-964867-11-3-3",
+        file: "AHFE2024-978-1-964867-11-3_3.pdf",
         title: "AHFE2024-978-1-964867-11-3_3",
         summary: `**Topic context:** Exam skills: Define → Apply → Evaluate → Recommend, one-page answer structure, public value / accountability / trade-offs.
 
