@@ -323,7 +323,7 @@ function StudyHub() {
                   <div className="text-sm font-medium mt-0.5 leading-snug">{hit.docTitle}</div>
                   <div className="text-xs text-muted-foreground mt-1 leading-snug">
                     {hit.snippet.before}
-                    <strong className="text-foreground bg-yellow-200 rounded px-0.5">
+                    <strong className="text-neutral-900 bg-yellow-300 rounded px-0.5">
                       {hit.snippet.match}
                     </strong>
                     {hit.snippet.after}
