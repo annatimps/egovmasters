@@ -542,10 +542,14 @@ function StudyHub() {
 
             {activeDoc.doc.file ? (
               activeDoc.doc.file.toLowerCase().endsWith(".pdf") ? (
-                <PdfViewer
-                  url={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
-                  title={activeDoc.doc.title}
-                />
+                <ClientOnly fallback={<div className="text-sm text-muted-foreground p-6">Loading PDF viewer…</div>}>
+                  <Suspense fallback={<div className="text-sm text-muted-foreground p-6">Loading PDF viewer…</div>}>
+                    <PdfViewer
+                      url={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
+                      title={activeDoc.doc.title}
+                    />
+                  </Suspense>
+                </ClientOnly>
               ) : (
                 <div className="rounded-lg border border-border bg-card p-6 text-sm">
                   <p className="text-muted-foreground mb-3">
