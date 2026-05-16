@@ -109,6 +109,9 @@ function StudyHub() {
   const [activeQuery, setActiveQuery] = useState(""); // term used for in-doc highlight
   const [matchIndex, setMatchIndex] = useState(0);
   const [matchCount, setMatchCount] = useState(0);
+  const [notes, setNotes] = useState("");
+  const [notesDraft, setNotesDraft] = useState("");
+  const [justSaved, setJustSaved] = useState(false);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
