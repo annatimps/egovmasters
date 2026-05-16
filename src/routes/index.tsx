@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { createFileRoute } from "@tanstack/react-router";
 import { studyContent } from "@/data/studyContent";
-import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp } from "lucide-react";
+import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp, NotebookPen, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
