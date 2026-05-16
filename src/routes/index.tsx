@@ -20,6 +20,16 @@ function escapeRegExp(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+// Turn `Source file:** \`some name.pdf\`` into a clickable markdown link
+// pointing at the corresponding file in /public/materials/.
+function linkifySourceFiles(md: string): string {
+  return md.replace(
+    /(Source file:\*\*\s*)`([^`]+)`/g,
+    (_m, prefix, filename) =>
+      `${prefix}[${filename}](/materials/${encodeURIComponent(filename)})`,
+  );
+}
+
 type SearchHit = {
   topicId: string;
   topicTitle: string;
