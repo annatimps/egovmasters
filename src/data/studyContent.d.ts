@@ -4,6 +4,7 @@ declare module "@/data/studyContent" {
     title: string;
     summary: string;
     content: string;
+    file?: string;
   }
   export interface StudyTopic {
     id: string;

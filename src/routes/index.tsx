@@ -530,16 +530,40 @@ function StudyHub() {
             <div className="my-10 flex items-center gap-4">
               <div className="h-px flex-1 bg-border" />
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Full material
+                {activeDoc.doc.file ? "Original PDF" : "Full material"}
               </span>
               <div className="h-px flex-1 bg-border" />
             </div>
 
-            <div ref={contentRef} className="prose-study" key={`c-${activeDoc.doc.id}-${activeQuery}`}>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {activeDoc.doc.content}
-              </ReactMarkdown>
-            </div>
+            {activeDoc.doc.file ? (
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-2 flex-wrap">
+                  <p className="text-xs text-muted-foreground">
+                    Use the toolbar inside the viewer to search (Ctrl/Cmd+F), zoom, or download.
+                  </p>
+                  <a
+                    href={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs px-2 py-1 rounded-md border border-border hover:bg-accent"
+                  >
+                    Open in new tab ↗
+                  </a>
+                </div>
+                <iframe
+                  key={activeDoc.doc.id}
+                  src={`/materials/${encodeURIComponent(activeDoc.doc.file)}#view=FitH`}
+                  title={activeDoc.doc.title}
+                  className="w-full h-[85vh] rounded-lg border border-border bg-card"
+                />
+              </div>
+            ) : (
+              <div ref={contentRef} className="prose-study" key={`c-${activeDoc.doc.id}-${activeQuery}`}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {activeDoc.doc.content}
+                </ReactMarkdown>
+              </div>
+            )}
           </article>
         ) : (
           <div className="flex min-h-screen items-center justify-center px-6">
