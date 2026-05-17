@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
-import { ZoomIn, ZoomOut } from "lucide-react";
+import { ZoomIn, ZoomOut, RefreshCw } from "lucide-react";
 
 // Keep the PDF.js worker local and version-matched so PDFs render reliably and offline.
 // Vite 7 is sensitive to this expression shape, so keep it on one line.
