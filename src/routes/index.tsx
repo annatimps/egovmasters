@@ -494,6 +494,7 @@ function StudyHub() {
                 </div>
               </div>
               <textarea
+                key={activeDoc.doc.id}
                 value={notesDraft}
                 onChange={(e) => setNotesDraft(e.target.value)}
                 ref={(el) => {
