@@ -14,6 +14,7 @@ export function PdfViewer({ url, title }: Props) {
   const [numPages, setNumPages] = useState(0);
   const [scale, setScale] = useState(1.1);
   const [width, setWidth] = useState<number | undefined>(undefined);
+  const [retryKey, setRetryKey] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,6 +25,11 @@ export function PdfViewer({ url, title }: Props) {
     setWidth(el.clientWidth - 16);
     return () => ro.disconnect();
   }, []);
+
+  const handleRetry = () => {
+    setRetryKey((k) => k + 1);
+    setNumPages(0);
+  };
 
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden">
@@ -64,16 +70,30 @@ export function PdfViewer({ url, title }: Props) {
         className="max-h-[85vh] overflow-auto bg-neutral-900/50 p-2"
       >
         <Document
+          key={retryKey}
           file={url}
           onLoadSuccess={({ numPages }) => setNumPages(numPages)}
           loading={<p className="text-sm text-muted-foreground p-6">Loading PDF…</p>}
           error={
-            <div className="p-6 text-sm text-muted-foreground">
-              Couldn't load this PDF inline.{" "}
-              <a className="underline" href={url} target="_blank" rel="noopener noreferrer">
-                Open in a new tab
-              </a>
-              .
+            <div className="p-6 text-sm text-muted-foreground flex flex-col items-start gap-3">
+              <p>Couldn't load this PDF inline.</p>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handleRetry}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  <RefreshCw className="h-3.5 w-3.5" />
+                  Try again
+                </button>
+                <a
+                  className="px-3 py-1.5 rounded-md text-xs border border-border hover:bg-accent"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open in new tab ↗
+                </a>
+              </div>
             </div>
           }
         >
