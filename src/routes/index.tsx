@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { createFileRoute } from "@tanstack/react-router";
 import { studyContent } from "@/data/studyContent";
+import { examPlaybook } from "@/data/examPlaybook";
 import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp, NotebookPen, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { lazy, Suspense } from "react";
@@ -283,14 +284,22 @@ function StudyHub() {
         )}
       >
         <div className="px-5 pt-5 pb-3 border-b border-sidebar-border shrink-0">
-          <div className="flex items-center gap-2 text-sidebar-primary mb-3">
+          <button
+            onClick={() => {
+              setSelected(null);
+              setSidebarOpen(false);
+              setActiveQuery("");
+            }}
+            className="flex items-center gap-2 text-sidebar-primary mb-3 w-full text-left hover:opacity-80 transition-opacity"
+            aria-label="Go to Exam Answer Playbook"
+          >
             <BookOpen className="h-5 w-5" />
             <h1 className="text-sm font-semibold leading-tight">
               E-Gov Master's
               <br />
               Exam Study Hub
             </h1>
-          </div>
+          </button>
           <div className="relative">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
             <input
@@ -562,14 +571,19 @@ function StudyHub() {
             )}
           </article>
         ) : (
-          <div className="flex min-h-screen items-center justify-center px-6">
-            <div className="text-center max-w-sm">
-              <BookOpen className="h-10 w-10 mx-auto text-muted-foreground/60" />
-              <p className="mt-4 text-sm text-muted-foreground">
-                Select a topic and document from the sidebar
+          <article className="mx-auto max-w-3xl px-6 md:px-10 py-10 md:py-14">
+            <header className="mb-6">
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Start here
               </p>
+              <h1 className="mt-1 text-3xl md:text-4xl font-semibold tracking-tight">
+                Exam Answer Playbook
+              </h1>
+            </header>
+            <div className="prose-study">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{examPlaybook}</ReactMarkdown>
             </div>
-          </div>
+          </article>
         )}
       </main>
     </div>
