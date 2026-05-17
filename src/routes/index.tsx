@@ -494,8 +494,20 @@ function StudyHub() {
                 </div>
               </div>
               <textarea
+                key={activeDoc.doc.id}
                 value={notesDraft}
                 onChange={(e) => setNotesDraft(e.target.value)}
+                ref={(el) => {
+                  if (el) {
+                    el.style.height = "auto";
+                    el.style.height = el.scrollHeight + "px";
+                  }
+                }}
+                onInput={(e) => {
+                  const el = e.currentTarget;
+                  el.style.height = "auto";
+                  el.style.height = el.scrollHeight + "px";
+                }}
                 onKeyDown={(e) => {
                   if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
                     e.preventDefault();
@@ -503,33 +515,8 @@ function StudyHub() {
                   }
                 }}
                 placeholder="Write or paste your own key points here. Saved locally to this browser. (⌘/Ctrl+S to save)"
-                className="w-full min-h-[120px] resize-y rounded-md border border-border bg-background p-3 text-sm leading-relaxed font-mono focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
+                className="w-full min-h-[120px] overflow-hidden resize-none rounded-md border border-border bg-background p-3 text-sm leading-relaxed font-mono focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
               />
-            </section>
-
-            {/* Lecture summary */}
-            <section
-              aria-labelledby="summary-heading"
-              className="rounded-xl border border-border bg-accent/60 p-5 md:p-6 shadow-sm"
-            >
-              <h2
-                id="summary-heading"
-                className="text-xs font-semibold uppercase tracking-wider text-primary mb-3"
-              >
-                Summary / Key Points
-              </h2>
-              <div ref={summaryRef} className="prose-study" key={`s-${activeDoc.doc.id}-${activeQuery}`}>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    a: ({ node, ...props }) => (
-                      <a {...props} target="_blank" rel="noopener noreferrer" />
-                    ),
-                  }}
-                >
-                  {linkifySourceFiles(activeDoc.doc.summary)}
-                </ReactMarkdown>
-              </div>
             </section>
 
             <div className="my-10 flex items-center gap-4">
