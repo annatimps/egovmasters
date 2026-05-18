@@ -11,5 +11,6 @@ declare module "@/data/studyContent" {
     title: string;
     documents: StudyDocument[];
   }
+  export function materialUrl(filename: string): string;
   export const studyContent: StudyTopic[];
 }
