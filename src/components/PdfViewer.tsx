@@ -1,35 +1,136 @@
 import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import { ZoomIn, ZoomOut, RefreshCw } from "lucide-react";
 
-// Keep the PDF.js worker local and version-matched so PDFs render reliably and offline.
-// Vite 7 is sensitive to this expression shape, so keep it on one line.
-pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+// Keep the PDF.js worker bundled from the installed pdfjs-dist package so its
+// version exactly matches the renderer used by react-pdf.
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 type Props = { url: string; title: string };
+
+type PdfCheckState =
+  | { status: "checking" }
+  | { status: "ready" }
+  | { status: "error"; message: string; statusCode?: number; contentType?: string };
+
+function isPdfContentType(contentType: string | null) {
+  return (contentType ?? "").toLowerCase().includes("application/pdf");
+}
+
+async function checkPdfResponse(url: string, signal: AbortSignal): Promise<PdfCheckState> {
+  const response = await fetch(url, { method: "HEAD", signal, cache: "no-store" });
+  const contentType = response.headers.get("content-type") ?? "";
+
+  if (response.status !== 200) {
+    return {
+      status: "error",
+      message: `Expected a 200 response for the PDF, but received ${response.status}.`,
+      statusCode: response.status,
+      contentType,
+    };
+  }
+
+  if (!isPdfContentType(contentType)) {
+    const likelyHtmlFallback = contentType.toLowerCase().includes("text/html");
+    return {
+      status: "error",
+      message: likelyHtmlFallback
+        ? "This URL returned HTML instead of a PDF, which usually means the app fallback page is being served for a missing file."
+        : "This URL did not return a PDF response.",
+      statusCode: response.status,
+      contentType,
+    };
+  }
+
+  return { status: "ready" };
+}
 
 export function PdfViewer({ url, title }: Props) {
   const [numPages, setNumPages] = useState(0);
   const [scale, setScale] = useState(1.1);
   const [width, setWidth] = useState<number | undefined>(undefined);
   const [retryKey, setRetryKey] = useState(0);
+  const [pdfCheck, setPdfCheck] = useState<PdfCheckState>({ status: "checking" });
+  const [renderError, setRenderError] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    const ro = new ResizeObserver(() => setWidth(el.clientWidth - 16));
+    const updateWidth = () => setWidth(Math.max(280, el.clientWidth - 16));
+    const ro = new ResizeObserver(updateWidth);
     ro.observe(el);
-    setWidth(el.clientWidth - 16);
+    updateWidth();
     return () => ro.disconnect();
   }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setPdfCheck({ status: "checking" });
+    setRenderError(null);
+    setNumPages(0);
+
+    checkPdfResponse(url, controller.signal)
+      .then((result) => {
+        if (!controller.signal.aborted) setPdfCheck(result);
+      })
+      .catch((error: unknown) => {
+        if (controller.signal.aborted) return;
+        const message = error instanceof Error ? error.message : String(error);
+        setPdfCheck({ status: "error", message: `Could not verify the PDF response: ${message}` });
+      });
+
+    return () => controller.abort();
+  }, [url, retryKey]);
 
   const handleRetry = () => {
     setRetryKey((k) => k + 1);
     setNumPages(0);
+    setRenderError(null);
   };
+
+  const handleLoadError = (error: Error) => {
+    console.error("PDF render failed", { url, error });
+    setRenderError(error.message || "The PDF renderer failed without an error message.");
+  };
+
+  const errorPanel = (message: string, details?: { statusCode?: number; contentType?: string }) => (
+    <div className="p-6 text-sm text-muted-foreground flex flex-col items-start gap-3">
+      <div className="space-y-2">
+        <p className="font-medium text-foreground">Couldn't load this PDF inline.</p>
+        <p>{message}</p>
+        <p className="break-all rounded-md border border-border bg-background/70 p-2 text-xs">
+          Attempted URL: {url}
+        </p>
+        {(details?.statusCode || details?.contentType) && (
+          <p className="text-xs">
+            Response: {details.statusCode ?? "unknown status"}
+            {details.contentType ? ` · ${details.contentType}` : ""}
+          </p>
+        )}
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          onClick={handleRetry}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          <RefreshCw className="h-3.5 w-3.5" />
+          Try again
+        </button>
+        <a
+          className="px-3 py-1.5 rounded-md text-xs border border-border hover:bg-accent"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open in new tab ↗
+        </a>
+      </div>
+    </div>
+  );
 
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden">
