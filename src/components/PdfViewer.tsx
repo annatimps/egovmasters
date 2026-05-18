@@ -170,45 +170,38 @@ export function PdfViewer({ url, title }: Props) {
         ref={containerRef}
         className="max-h-[85vh] overflow-auto bg-neutral-900/50 p-2"
       >
-        <Document
-          key={retryKey}
-          file={url}
-          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-          loading={<p className="text-sm text-muted-foreground p-6">Loading PDF…</p>}
-          error={
-            <div className="p-6 text-sm text-muted-foreground flex flex-col items-start gap-3">
-              <p>Couldn't load this PDF inline.</p>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={handleRetry}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-                >
-                  <RefreshCw className="h-3.5 w-3.5" />
-                  Try again
-                </button>
-                <a
-                  className="px-3 py-1.5 rounded-md text-xs border border-border hover:bg-accent"
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Open in new tab ↗
-                </a>
-              </div>
-            </div>
-          }
-        >
-          {Array.from({ length: numPages }, (_, i) => (
-            <div key={i} className="flex justify-center mb-3 last:mb-0">
-              <Page
-                pageNumber={i + 1}
-                width={width ? width * scale : undefined}
-                renderAnnotationLayer
-                renderTextLayer
-              />
-            </div>
-          ))}
-        </Document>
+        {pdfCheck.status === "checking" ? (
+          <p className="text-sm text-muted-foreground p-6">Checking PDF response…</p>
+        ) : pdfCheck.status === "error" ? (
+          errorPanel(pdfCheck.message, pdfCheck)
+        ) : renderError ? (
+          errorPanel(`PDF renderer error: ${renderError}`)
+        ) : (
+          <Document
+            key={retryKey}
+            file={url}
+            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            onLoadError={handleLoadError}
+            loading={<p className="text-sm text-muted-foreground p-6">Loading PDF…</p>}
+            noData={errorPanel("No PDF URL was provided.")}
+            error={errorPanel("React PDF could not parse or render this file.")}
+          >
+            {numPages === 0 ? (
+              <p className="text-sm text-muted-foreground p-6">Preparing PDF pages…</p>
+            ) : (
+              Array.from({ length: numPages }, (_, i) => (
+                <div key={i} className="flex justify-center mb-3 last:mb-0">
+                  <Page
+                    pageNumber={i + 1}
+                    width={width ? width * scale : undefined}
+                    renderAnnotationLayer
+                    renderTextLayer
+                  />
+                </div>
+              ))
+            )}
+          </Document>
+        )}
       </div>
       <span className="sr-only">{title}</span>
     </div>
