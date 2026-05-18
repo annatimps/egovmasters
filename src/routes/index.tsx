@@ -27,12 +27,19 @@ function escapeRegExp(s: string) {
 }
 
 // Turn `Source file:** \`some name.pdf\`` into a clickable markdown link
-// pointing at the corresponding file in /public/materials/.
+// pointing at the corresponding file in public/materials/.
+function materialUrl(filename: string): string {
+  const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+  return `${base}materials/${encodeURIComponent(filename)}`;
+}
+
 function linkifySourceFiles(md: string): string {
   return md.replace(
     /(Source file:\*\*\s*)`([^`]+)`/g,
     (_m, prefix, filename) =>
-      `${prefix}[${filename}](/materials/${encodeURIComponent(filename)})`,
+      `${prefix}[${filename}](${materialUrl(filename)})`,
   );
 }
 
@@ -541,7 +548,7 @@ function StudyHub() {
                 <ClientOnly fallback={<div className="text-sm text-muted-foreground p-6">Loading PDF viewer…</div>}>
                   <Suspense fallback={<div className="text-sm text-muted-foreground p-6">Loading PDF viewer…</div>}>
                     <PdfViewer
-                      url={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
+                      url={materialUrl(activeDoc.doc.file)}
                       title={activeDoc.doc.title}
                     />
                   </Suspense>
@@ -553,7 +560,7 @@ function StudyHub() {
                     rendered inline.
                   </p>
                   <a
-                    href={`/materials/${encodeURIComponent(activeDoc.doc.file)}`}
+                    href={materialUrl(activeDoc.doc.file)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-3 py-1.5 rounded-md border border-border hover:bg-accent"
