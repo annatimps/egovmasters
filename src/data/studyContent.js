@@ -3,6 +3,19 @@
  * Edit freely. Each doc has: id, title, summary (markdown), content (markdown).
  */
 
+const MATERIALS_BASE_URL = "https://vewkqojvuelyfrxinqoj.supabase.co/storage/v1/object/public/exam-materials/";
+
+export function materialUrl(filename) {
+  if (/^https?:\/\//i.test(filename)) return filename;
+  if (filename.toLowerCase().endsWith(".pdf")) {
+    return `${MATERIALS_BASE_URL}${encodeURIComponent(filename)}`;
+  }
+  const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+  return `${base}materials/${encodeURIComponent(filename)}`;
+}
+
 export const studyContent = [
   {
     id: "foundations",
@@ -10,7 +23,7 @@ export const studyContent = [
     documents: [
       {
         id: "foundations-04-09-2025-introductory-lecture",
-        file: "04.09.2025_Introductory Lecture.pdf",
+        file: materialUrl("04.09.2025_Introductory Lecture.pdf"),
         title: "04.09.2025_Introductory Lecture",
         summary: `**Topic context:** Foundations: e-government → e-governance, digital maturity (Interaction → Transaction → Transformation), digital literacy, prosumer citizen.
 
@@ -324,7 +337,7 @@ SEE YOU TOMORROW!`,
       },
       {
         id: "foundations-lecture-1-information-society-principles",
-        file: "Lecture 1- Information Society Principles.pdf",
+        file: materialUrl("Lecture 1- Information Society Principles.pdf"),
         title: "Lecture 1- Information Society Principles",
         summary: `**Topic context:** Foundations: e-government → e-governance, digital maturity (Interaction → Transaction → Transformation), digital literacy, prosumer citizen.
 
@@ -1032,7 +1045,7 @@ TALTECH.EE/EN
       },
       {
         id: "foundations-un-e-government-survey-2024-1",
-        file: "UN e-Government Survey 2024 (1).pdf",
+        file: materialUrl("UN e-Government Survey 2024 (1).pdf"),
         title: "UN e-Government Survey 2024",
         summary: `**Topic context:** Foundations: e-government → e-governance, digital maturity (Interaction → Transaction → Transformation), digital literacy, prosumer citizen.
 
@@ -3865,7 +3878,7 @@ the e-government literacy subindex provides insights into government            
       {
         id: "regulatory-legal-eu-rule-of-law-report-2025",
         title: "EU Rule of Law Report 2025",
-        file: "EU Rule of Law Report 2025.pdf",
+        file: materialUrl("EU Rule of Law Report 2025.pdf"),
         summary: `**Topic context:** European Commission's annual Rule of Law Report — covers justice systems, anti-corruption frameworks, media pluralism and institutional checks and balances across EU Member States.
 
 **Source file:** \`EU Rule of Law Report 2025.pdf\`
@@ -3876,7 +3889,7 @@ Open the PDF below to read the full report.`,
       {
         id: "regulatory-legal-eu-rule-of-law-report-2025-recommendations",
         title: "EU Rule of Law Report 2025 — Recommendations",
-        file: "EU Rule of Law Report 2025_recommendations.pdf",
+        file: materialUrl("EU Rule of Law Report 2025_recommendations.pdf"),
         summary: `**Topic context:** Country-specific recommendations accompanying the EU Rule of Law Report 2025.
 
 **Source file:** \`EU Rule of Law Report 2025_recommendations.pdf\`
@@ -3887,7 +3900,7 @@ Open the PDF below to read the recommendations.`,
       {
         id: "regulatory-legal-law-technology-white-case",
         title: "Law & Technology: Risks and Opportunities (White & Case)",
-        file: "Law  Technology_ Risks and Opportunities from the Tectonic Forces at Work _ White  Case LLP (3).pdf",
+        file: materialUrl("Law  Technology_ Risks and Opportunities from the Tectonic Forces at Work _ White  Case LLP (3).pdf"),
         summary: `**Topic context:** White & Case analysis of the tectonic forces reshaping the interaction between law and technology — risks, opportunities, and regulatory implications.
 
 **Source file:** \`Law  Technology_ Risks and Opportunities from the Tectonic Forces at Work _ White  Case LLP (3).pdf\`
@@ -3898,7 +3911,7 @@ Open the PDF below to read the article.`,
       {
         id: "regulatory-legal-europe-fit-for-the-digital-age",
         title: "A Europe Fit for the Digital Age",
-        file: "_a-europe-fit-for-the-digital-ageeida-europe-fit-for-the-digital-age_a-europe-fit-for-the-digital-age7501 (3).pdf",
+        file: materialUrl("_a-europe-fit-for-the-digital-ageeida-europe-fit-for-the-digital-age_a-europe-fit-for-the-digital-age7501 (3).pdf"),
         summary: `**Topic context:** EU strategy package "A Europe fit for the Digital Age" — empowering people with a new generation of technologies and shaping the EU's digital transformation.
 
 **Source file:** \`_a-europe-fit-for-the-digital-ageeida-europe-fit-for-the-digital-age_a-europe-fit-for-the-digital-age7501 (3).pdf\`
@@ -3908,7 +3921,7 @@ Open the PDF below to read the full document.`,
       },
       {
         id: "regulatory-legal-05-09-2025-eu-regulatory-framework-for-egov",
-        file: "05.09.2025_EU Regulatory Framework for eGOV.pdf",
+        file: materialUrl("05.09.2025_EU Regulatory Framework for eGOV.pdf"),
         title: "05.09.2025_EU Regulatory Framework for eGOV",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -4395,7 +4408,7 @@ THANK YOU VERY MUCH!
       },
       {
         id: "regulatory-legal-19-09-pre-juridical-framework-soft-law",
-        file: "19.09 Pre_juridical framework_soft law.pdf",
+        file: materialUrl("19.09 Pre_juridical framework_soft law.pdf"),
         title: "19.09 Pre_juridical framework_soft law",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -4885,7 +4898,7 @@ Thank you very much!
       },
       {
         id: "regulatory-legal-national-legislation-and-e-gov-18-09-2025",
-        file: "National legislation and e-gov_18.09.2025.pdf",
+        file: materialUrl("National legislation and e-gov_18.09.2025.pdf"),
         title: "National legislation and e-gov_18.09.2025",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -5261,7 +5274,7 @@ THANK YOU VERY MUCH!
       },
       {
         id: "regulatory-legal-eu-legislation-in-digital-sector-5",
-        file: "EU Legislation in Digital Sector (5).pdf",
+        file: materialUrl("EU Legislation in Digital Sector (5).pdf"),
         title: "EU Legislation in Digital Sector",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -5406,7 +5419,7 @@ Programme Regulation,       Facility Regulation,             Directive,         
       },
       {
         id: "regulatory-legal-regulation-tomorrow-what-happens-when-technology-is-faster-than-the-law-2",
-        file: "Regulation Tomorrow_What Happens When Technology is Faster than the Law (2).pdf",
+        file: materialUrl("Regulation Tomorrow_What Happens When Technology is Faster than the Law (2).pdf"),
         title: "Regulation Tomorrow_What Happens When Technology is Faster than the Law",
         summary: `**Topic context:** Regulatory: the pacing problem, hierarchy (soft law → EU law → state law), and the 14 EU acts (DGA, AI Act, NIS2, etc.).
 
@@ -6954,7 +6967,7 @@ of innovation and technology.`,
     documents: [
       {
         id: "interoperability-lecture-2-interoperability",
-        file: "Lecture 2 - Interoperability.pdf",
+        file: materialUrl("Lecture 2 - Interoperability.pdf"),
         title: "Lecture 2 - Interoperability",
         summary: `**Topic context:** Interoperability: EIF four layers (legal / organisational / semantic / technical) and X-Road as Estonia's data-exchange layer.
 
@@ -7335,7 +7348,7 @@ TALTECH.EE/EN
       },
       {
         id: "interoperability-ngise25-mihkel-lauk-11032025",
-        file: "NGISE25_Mihkel-Lauk_11032025.pdf",
+        file: materialUrl("NGISE25_Mihkel-Lauk_11032025.pdf"),
         title: "NGISE25_Mihkel-Lauk_11032025",
         summary: `**Topic context:** Interoperability: EIF four layers (legal / organisational / semantic / technical) and X-Road as Estonia's data-exchange layer.
 
@@ -7823,7 +7836,7 @@ Business Architect    process architecture.                                   fo
       },
       {
         id: "interoperability-x-roadinteroperabilityhistoricalanalysis",
-        file: "x-roadinteroperabilityhistoricalanalysis.pdf",
+        file: materialUrl("x-roadinteroperabilityhistoricalanalysis.pdf"),
         title: "x-roadinteroperabilityhistoricalanalysis",
         summary: `**Topic context:** Interoperability: EIF four layers (legal / organisational / semantic / technical) and X-Road as Estonia's data-exchange layer.
 
@@ -8188,7 +8201,7 @@ REFERENCES                                                                      
     documents: [
       {
         id: "digital-identity-reshaping-the-eu-digital-identity-framework-lips2022-1",
-        file: "Reshaping the EU digital identity framework_Lips2022 (1).pdf",
+        file: materialUrl("Reshaping the EU digital identity framework_Lips2022 (1).pdf"),
         title: "Reshaping the EU digital identity framework_Lips2022",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -8750,7 +8763,7 @@ Re-Shaping the EU Digital Identity Framework                                    
       },
       {
         id: "digital-identity-what-is-a-digital-identity-wallet-a-systematic-literature-review-1",
-        file: "What_is_a_Digital_Identity_Wallet_A_Systematic_Literature_Review (1).pdf",
+        file: materialUrl("What_is_a_Digital_Identity_Wallet_A_Systematic_Literature_Review (1).pdf"),
         title: "What_is_a_Digital_Identity_Wallet_A_Systematic_Literature_Review",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -9470,7 +9483,7 @@ Authorized licensed use limited to: Tallinn University of Technology. Downloaded
       },
       {
         id: "digital-identity-wef-reimagining-digital-id-2023-1",
-        file: "WEF_Reimagining_Digital_ID_2023 (1).pdf",
+        file: materialUrl("WEF_Reimagining_Digital_ID_2023 (1).pdf"),
         title: "WEF_Reimagining_Digital_ID_2023",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -11347,7 +11360,7 @@ www.weforum.org`,
       },
       {
         id: "digital-identity-eidas-implementation-challenges-lips21-1",
-        file: "eIDAS implementation challenges_Lips21 (1).pdf",
+        file: materialUrl("eIDAS implementation challenges_Lips21 (1).pdf"),
         title: "eIDAS implementation challenges_Lips21",
         summary: `**Topic context:** Digital ID: eIDAS v1→v2, SSI, taxonomy of Digital Identity Wallets, cross-border recognition, security vs. UX.
 
@@ -12044,7 +12057,7 @@ Author Proof
     documents: [
       {
         id: "service-design-lecture-1-05-09-2025",
-        file: "Lecture 1 - 05-09-2025.pdf",
+        file: materialUrl("Lecture 1 - 05-09-2025.pdf"),
         title: "Lecture 1 - 05-09-2025",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -12411,7 +12424,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-lecture-2-19-09-2025",
-        file: "Lecture 2 - 19-09-2025.pdf",
+        file: materialUrl("Lecture 2 - 19-09-2025.pdf"),
         title: "Lecture 2 - 19-09-2025",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -12796,7 +12809,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-lecture-3-change-management",
-        file: "Lecture 3 (Change Management).pdf",
+        file: materialUrl("Lecture 3 (Change Management).pdf"),
         title: "Lecture 3 (Change Management)",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13133,7 +13146,7 @@ Change                           Discussions                   Concepts         
       },
       {
         id: "service-design-lecture-3-03-10-2025",
-        file: "Lecture 3 - 03-10-2025.pdf",
+        file: materialUrl("Lecture 3 - 03-10-2025.pdf"),
         title: "Lecture 3 - 03-10-2025",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13451,7 +13464,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-performance-user-centric-service-design",
-        file: "Performance-User-Centric-Service-Design.pdf",
+        file: materialUrl("Performance-User-Centric-Service-Design.pdf"),
         title: "Performance-User-Centric-Service-Design",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13541,7 +13554,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-leadership-change-management-strategy-alignment",
-        file: "Leadership_Change-Management_Strategy-Alignment.pdf",
+        file: materialUrl("Leadership_Change-Management_Strategy-Alignment.pdf"),
         title: "Leadership_Change-Management_Strategy-Alignment",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13683,7 +13696,7 @@ mihkel.lauk@taltech.ee
       },
       {
         id: "service-design-budgeting",
-        file: "Budgeting.pdf",
+        file: materialUrl("Budgeting.pdf"),
         title: "Budgeting",
         summary: `**Topic context:** Service design: 'we plan, they perceive', public-value strategy alignment, whole-of-society change management, service lifecycle.
 
@@ -13830,7 +13843,7 @@ mihkel.lauk@taltech.ee
     documents: [
       {
         id: "ai-data-governance-data-governance-and-public-sector-ai",
-        file: "Data Governance and Public Sector AI.pdf",
+        file: materialUrl("Data Governance and Public Sector AI.pdf"),
         title: "Data Governance and Public Sector AI",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
@@ -14285,7 +14298,7 @@ TALTECH.EE/EN`,
       },
       {
         id: "ai-data-governance-ai-and-the-gdpr-inevitable-nemeses-1",
-        file: "AI and the GDPR_inevitable nemeses (1).pdf",
+        file: materialUrl("AI and the GDPR_inevitable nemeses (1).pdf"),
         title: "AI and the GDPR_inevitable nemeses",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
@@ -15349,7 +15362,7 @@ Zarsky, T. Z. (2017), ‘Incompatible: the GDPR in the age of big data,’ Seton
       },
       {
         id: "ai-data-governance-intro-to-trust-and-data-1",
-        file: "Intro to Trust and Data (1).pdf",
+        file: materialUrl("Intro to Trust and Data (1).pdf"),
         title: "Intro to Trust and Data",
         summary: `**Topic context:** AI & data: agentic AI in public admin, structural/procedural/relational data-governance mechanisms, AI ↔ GDPR tensions.
 
@@ -15799,7 +15812,7 @@ Thank you!`,
     documents: [
       {
         id: "global-trends-un-e-government-survey-2024-1",
-        file: "UN e-Government Survey 2024 (1).pdf",
+        file: materialUrl("UN e-Government Survey 2024 (1).pdf"),
         title: "UN e-Government Survey 2024",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -18625,7 +18638,7 @@ the e-government literacy subindex provides insights into government            
       },
       {
         id: "global-trends-oecd-regulatory-sandbox-toolkit",
-        file: "OECD Regulatory Sandbox Toolkit.pdf",
+        file: materialUrl("OECD Regulatory Sandbox Toolkit.pdf"),
         title: "OECD Regulatory Sandbox Toolkit",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -20807,7 +20820,7 @@ REGULATORY SANDBOX TOOLKIT © OECD 2025
       },
       {
         id: "global-trends-eu-international-digital-strategy-1",
-        file: "EU International Digital Strategy (1).pdf",
+        file: materialUrl("EU International Digital Strategy (1).pdf"),
         title: "EU International Digital Strategy",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -21581,7 +21594,7 @@ will continue to engage constructively based on respect for the international ru
       },
       {
         id: "global-trends-annex-to-the-eu-international-digital-strategy-1",
-        file: "Annex to the EU International Digital Strategy (1).pdf",
+        file: materialUrl("Annex to the EU International Digital Strategy (1).pdf"),
         title: "Annex to the EU International Digital Strategy",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -21978,7 +21991,7 @@ Stack                        Stack, referring to the foundational structure of p
       },
       {
         id: "global-trends-berlin-declaration-1",
-        file: "Berlin Declaration (1).pdf",
+        file: materialUrl("Berlin Declaration (1).pdf"),
         title: "Berlin Declaration",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -22636,7 +22649,7 @@ KINGDOM OF SWEDEN
       },
       {
         id: "global-trends-tallinn-declaration-on-egovernment-1",
-        file: "Tallinn Declaration on eGovernment (1).pdf",
+        file: materialUrl("Tallinn Declaration on eGovernment (1).pdf"),
         title: "Tallinn Declaration on eGovernment",
         summary: `**Topic context:** Global trends: UN EGDI benchmarking, OECD regulatory sandboxes, EU international digital strategy, Berlin & Tallinn declarations.
 
@@ -23322,7 +23335,7 @@ step.</th>
       },
       {
         id: "exam-skills-20-e-services-in-estonian-public-sector",
-        file: "20 E-services in Estonian Public Sector.pdf",
+        file: materialUrl("20 E-services in Estonian Public Sector.pdf"),
         title: "20 E-services in Estonian Public Sector",
         summary: `**Topic context:** Exam skills: Define → Apply → Evaluate → Recommend, one-page answer structure, public value / accountability / trade-offs.
 
@@ -23771,7 +23784,7 @@ Detailed analysis and concept development of 20 e-services in Estonian public se
       },
       {
         id: "exam-skills-ahfe2024-978-1-964867-11-3-3",
-        file: "AHFE2024-978-1-964867-11-3_3.pdf",
+        file: materialUrl("AHFE2024-978-1-964867-11-3_3.pdf"),
         title: "AHFE2024-978-1-964867-11-3_3",
         summary: `**Topic context:** Exam skills: Define → Apply → Evaluate → Recommend, one-page answer structure, public value / accountability / trade-offs.
 

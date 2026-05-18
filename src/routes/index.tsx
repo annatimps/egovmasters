@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect, useRef, useLayoutEffect, useCallback } fr
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { createFileRoute } from "@tanstack/react-router";
-import { studyContent } from "@/data/studyContent";
+import { materialUrl, studyContent } from "@/data/studyContent";
 import { examPlaybook } from "@/data/examPlaybook";
 import { ChevronRight, ChevronDown, Menu, BookOpen, Search, X, ChevronUp, NotebookPen, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -24,15 +24,6 @@ export const Route = createFileRoute("/")({
 
 function escapeRegExp(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-// Turn `Source file:** \`some name.pdf\`` into a clickable markdown link
-// pointing at the corresponding file in public/materials/.
-function materialUrl(filename: string): string {
-  const base = import.meta.env.BASE_URL.endsWith("/")
-    ? import.meta.env.BASE_URL
-    : `${import.meta.env.BASE_URL}/`;
-  return `${base}materials/${encodeURIComponent(filename)}`;
 }
 
 function linkifySourceFiles(md: string): string {
