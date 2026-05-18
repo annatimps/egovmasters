@@ -7,7 +7,13 @@ const MATERIALS_BASE_URL = "https://vewkqojvuelyfrxinqoj.supabase.co/storage/v1/
 
 export function materialUrl(filename) {
   if (/^https?:\/\//i.test(filename)) return filename;
-  return `${MATERIALS_BASE_URL}${encodeURIComponent(filename)}`;
+  if (filename.toLowerCase().endsWith(".pdf")) {
+    return `${MATERIALS_BASE_URL}${encodeURIComponent(filename)}`;
+  }
+  const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+  return `${base}materials/${encodeURIComponent(filename)}`;
 }
 
 export const studyContent = [
