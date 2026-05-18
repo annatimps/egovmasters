@@ -126,7 +126,14 @@ export function PdfViewer({ url, title }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open in new tab ↗
+          Open PDF in new tab ↗
+        </a>
+        <a
+          className="px-3 py-1.5 rounded-md text-xs border border-border hover:bg-accent"
+          href={url}
+          download
+        >
+          Download
         </a>
       </div>
     </div>
@@ -163,6 +170,13 @@ export function PdfViewer({ url, title }: Props) {
             className="ml-2 text-xs px-2 py-1 rounded-md border border-border hover:bg-accent"
           >
             Open ↗
+          </a>
+          <a
+            href={url}
+            download
+            className="text-xs px-2 py-1 rounded-md border border-border hover:bg-accent"
+          >
+            Download
           </a>
         </div>
       </div>
